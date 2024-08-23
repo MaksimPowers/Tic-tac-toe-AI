@@ -145,6 +145,11 @@ class Nn():
         return loss
     
 net = Nn([9, 81, 729, 81, 9])
+with np.load("Weights_saved.npz") as loaded_file:
+    net.weights[0] = loaded_file["x"]
+    net.weights[1] = loaded_file["y"]
+    net.weights[2] = loaded_file["z"]
+    net.weights[3] = loaded_file["d"]
 lr = 0.005
 
 batch_size = 16
