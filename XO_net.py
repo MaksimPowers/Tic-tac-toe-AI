@@ -185,13 +185,13 @@ for step in (pbar := tqdm(range(total_steps))):
             player = idx % 2
 
             if game.game_result[player]:
-                # If the game ended by first Nn won.
+                # If the game was ended by first Nn won.
                 value = 0.5
             elif sum(game.game_result) == 0:
-                # If it's draw.
+                # If it's a draw.
                 value = -0.25
             else:
-                # If the game ended by first Nn lose.
+                # If the game was ended by first Nn lose.
                 value = -0.5
 
             boards.append(board)
